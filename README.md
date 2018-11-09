@@ -6,4 +6,5 @@ linkki sovellukseen:
 https://bilelista.herokuapp.com/
 
 [linkki kayttotapauksiin](https://github.com/tn1995/bilelista/blob/master/dokumentaatio/kayttotapaukset.txt)
+
 [linkki tietokantakaavioon](https://github.com/tn1995/bilelista/blob/master/dokumentaatio/tietokantakaavio.pdf)
