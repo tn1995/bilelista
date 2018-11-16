@@ -1,6 +1,7 @@
 from application import db
-  
-class Task(db.Model):
+from application.models import Base
+
+class Task(Base):
     id = db.Column(db.Integer, primary_key=True)
     date_created = db.Column(db.DateTime, default=db.func.current_timestamp())
     date_modified = db.Column(db.DateTime, default=db.func.current_timestamp(),
