@@ -25,10 +25,13 @@ def tasks_set_done(task_id):
 def tasks_create():
     form = TaskForm(request.form)
 
+    if not form.validate():
+        return render_template("tasks/new.html", form = form)
+
     t = Task(form.name.data)
     t.done = form.done.data
-  
+
     db.session().add(t)
     db.session().commit()
-  
+
     return redirect(url_for("tasks_index"))
