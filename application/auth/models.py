@@ -33,7 +33,7 @@ class User(Base):
         return True
     
     def roles(self):
-        return ["ADMIN"]
+        return ["ANY"]
 
     @staticmethod
     def find_users_with_no_tasks():
