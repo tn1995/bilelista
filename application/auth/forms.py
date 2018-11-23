@@ -9,3 +9,11 @@ class LoginForm(FlaskForm):
   
     class Meta:
         csrf = False
+
+class SignupForm(FlaskForm):
+    name = StringField("name")
+    username = StringField("Username")
+    password = PasswordField("Password")
+  
+    class Meta:
+        csrf = False
