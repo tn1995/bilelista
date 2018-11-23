@@ -5,6 +5,6 @@ Sovellukseen voi lisätä omia bileitä, joihin muut kirjautuneet käyttäjät v
 linkki sovellukseen:
 https://bilelista.herokuapp.com/
 
-[linkki kayttotapauksiin](https://github.com/tn1995/bilelista/blob/master/dokumentaatio/kayttotapaukset.txt)
+[linkki kayttotapauksiin](https://github.com/tn1995/bilelista/blob/master/documentation/kayttotapaukset.txt)
 
-[linkki tietokantakaavioon](https://github.com/tn1995/bilelista/blob/master/dokumentaatio/tietokantakaavio.pdf)
+[linkki tietokantakaavioon](https://github.com/tn1995/bilelista/blob/master/documentation/tietokantakaavio.pdf)
