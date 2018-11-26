@@ -24,6 +24,19 @@ def tasks_set_done(task_id):
     t = Task.query.get(task_id)
     t.done = True
     db.session().commit()
+
+  
+    return redirect(url_for("tasks_index"))
+@app.route("/tasks/delete/<task_id>/", methods=["POST"])
+@login_required()
+def tasks_delete(task_id):
+
+    t = Task.query.get(task_id)
+    if t.account_id != current_user.id:
+        return redirect(url_for("tasks_index"))
+    db.session().delete(t)
+    db.session().commit()
+    
   
     return redirect(url_for("tasks_index"))
 
