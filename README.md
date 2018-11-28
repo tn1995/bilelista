@@ -15,6 +15,7 @@ Tämänhetkiset toiminnallisuudet:
 - Kirjautuminen ja rekisteröityminen
 - Bileiden lisääminen ja poistaminen onnistuu. Poistaminen onnistuu vain henkilöltä, joka on luonut bileet listaan.
 - Osallistu- nappia painamalla vain done arvo muuttuu trueksi
+- Sovellus listaa henkilöt, joilla ei ole bileitä
 
 Tulevat toiminnallisuudet:
 - Osallistumisnappia painamalla nappia painanut henkilö lisätään osallistujalistaan
