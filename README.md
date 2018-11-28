@@ -10,3 +10,12 @@ Sovellukseen voi lisätä omia bileitä, joihin muut kirjautuneet käyttäjät v
 
 Testitunnusten käyttäjänimi on Tuomas 
 ja salasana on yolo
+
+Tämänhetkiset toiminnallisuudet:
+- Kirjautuminen ja rekisteröityminen
+- Bileiden lisääminen ja poistaminen onnistuu. Poistaminen onnistuu vain henkilöltä, joka on luonut bileet listaan.
+- Osallistu- nappia painamalla vain done arvo muuttuu trueksi
+
+Tulevat toiminnallisuudet:
+- Osallistumisnappia painamalla nappia painanut henkilö lisätään osallistujalistaan
+- Bileitä klikkaamalla pääsee uudelle HTML- sivulle, jolta löytyy kaikki osallistujat ja bileiden tiedot, sekä sijainti
