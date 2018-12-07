@@ -12,7 +12,7 @@ from application.tasks.forms import TaskForm
 @app.route("/information/", methods=["GET"])
 @login_required
 def information_index():
-    return render_template("authtasks/bile.html", tasks_osallistujat=UserTask.find_tasks_osallistujat()) 
+    return render_template("authtasks/bile.html") 
 
  #shows the information of the party 
 @app.route("/information/<task_id>")
@@ -20,13 +20,30 @@ def information_index():
 def tasks_information(task_id):
     t = Task.query.get(task_id)
 
-    return render_template("authtasks/bile.html", bile = t)
+    return render_template("authtasks/bile.html", bile = t, tasks_osallistujat=UserTask.find_tasks_osallistujat(task_id))
 
-@app.route("/information/moi")
+
+#take part in party  
+@app.route("/information/osallistu/<task_id>", methods=["POST"])
 @login_required()
-def task_osallistu():
-    
-    return redirect(url_for("authtasks/bile.html"))
+def tasks_osallistu(task_id):
+    t=UserTask(current_user.id, task_id)
+
+
+#    form = UserTaskForm(request.form)
+#  
+#    if not form.validate():
+#        return render_template("authtasks/bile.html", form = form)
+  
+ #   t = Task(form.name.data)
+ #   t.done = form.done.data
+ #   t.account_id = current_user.id
+  
+    db.session().add(t)
+    db.session().commit()
+  
+    return redirect(url_for("tasks_information", task_id=task_id))
+
 
   
 #@app.route("/tasks/<task_id>/", methods=["POST"])
