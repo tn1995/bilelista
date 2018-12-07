@@ -11,7 +11,7 @@ from application.auth.forms import LoginForm, SignupForm
 
 @app.route("/tasks/", methods=["GET"])
 def tasks_index():
-    return render_template("tasks/list.html", tasks = Task.query.all())
+    return render_template("tasks/list.html", tasks = Task.query.all(), tasks_jarjestaja=Task.find_tasks_jarjestaja())
 
 #creates new   
 @app.route("/tasks/new/")
@@ -62,6 +62,8 @@ def tasks_create():
   
     return redirect(url_for("tasks_index"))
 
+
+
 @app.route("/tasks/<task_id>/", methods=["POST"])
 @login_required()
 def tasks_participate(task_id):
@@ -72,3 +74,7 @@ def tasks_participate(task_id):
 
   
     return redirect(url_for("tasks_index"))
+
+#@app.route('/tasks')
+#def tasks_index():
+#    return render_template("tasks/list.html", tasks_jarjestaja=Task.find_tasks_jarjestaja())
