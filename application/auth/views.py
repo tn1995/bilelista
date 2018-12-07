@@ -29,7 +29,7 @@ def auth_signup():
 
     form = SignupForm(request.form)
     # mahdolliset validoinnit
-
+    
     user = User.query.filter_by(username=form.username.data).first()
     if user:
         return render_template("auth/signupform.html", form = form,
