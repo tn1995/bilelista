@@ -12,7 +12,7 @@ from application.tasks.forms import TaskForm
 @app.route("/information/", methods=["GET"])
 @login_required
 def information_index():
-    return render_template("authtasks/bile.html") 
+    return render_template("authtasks/bile.html", tasks_osallistujat=UserTask.find_tasks_osallistujat()) 
 
  #shows the information of the party 
 @app.route("/information/<task_id>")
