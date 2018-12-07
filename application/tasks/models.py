@@ -18,12 +18,13 @@ class Task(Base):
         self.name = name
         self.done = False
 
+
     @staticmethod
-    def find_tasks_jarjestaja():
-        stmt = text("SELECT Account.name FROM Account"
+    def find_lista():
+        stmt = text("SELECT Account.name AS account_name, Task.id, Task.done, Task.name FROM Account"
                      " LEFT JOIN Task ON Task.account_id = Account.id"
                      " WHERE (Task.account_id = Account.id)"
-                     " GROUP BY Account.id")
+                     " GROUP BY Task.id")
         res = db.engine.execute(stmt)
 
 #        response = []
