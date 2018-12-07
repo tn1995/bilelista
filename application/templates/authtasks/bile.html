@@ -4,6 +4,19 @@
   <p>
     
     {{bile.name}}
+    <th>Osallistujat</th>
+    {% if tasks_osallistujat is defined %}
+
+    <ul>
+        
+      {% for user in tasks_osallistujat %}
+      
+      <li>
+        {{user.name}}
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
     
   </p>
 {% endblock %}
