@@ -4,5 +4,10 @@ from wtforms import BooleanField, StringField, validators, PasswordField, String
   
 
 
-class Osallistuminen():
-    done = BooleanField("Done")
+class UserTaskForm():
+
+    
+
+    class Meta:
+        csrf = False
+    
