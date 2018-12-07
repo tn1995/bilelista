@@ -2,10 +2,11 @@
 
 {% block body %}
   <table>
+      <th>Napauta bileitä nähdäksesi osallistujat ja voit myös itse osallistua</th>
     <tr>
-      <th>Task</th>
+      <th>Bileet</th>
       <th>Done</th>
-      <th></th>
+      
     </tr>
     {% for task in tasks %}
     <tr>
@@ -13,12 +14,28 @@
       <td><a href="{{ url_for('tasks_information', task_id=task.id) }}">{{ task.name }}</a></td>
       <td>{{ task.done }}</td>
       <td>
-        
+      
   <form method="POST" action="{{ url_for('tasks_delete', task_id=task.id) }}">
 	  <input type="submit" value="Poista!"/>
   </form>
       </td>
     </tr>
+    
     {% endfor %}
+    
+    {% if tasks_jarjestaja is defined %}
+
+    <ul>
+        
+      {% for user in tasks_jarjestaja %}
+      <th>Järjestäjä</th>
+      <li>
+        {{user.name}}
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
   </table>
+
+
 {% endblock %}
