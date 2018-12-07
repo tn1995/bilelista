@@ -15,14 +15,19 @@ class UserTask(Base):
                            nullable=False)
 
     @staticmethod
-    def find_tasks_osallistujat():
+    def find_tasks_osallistujat(task_id):
         stmt = text("SELECT Account.name FROM Account"
                      " LEFT JOIN User_task ON User_task.account_id = Account.id"
                      " WHERE (User_task.account_id = Account.id)"
-                     " GROUP BY Account.id")
+                     " AND User_task.task_id = :task_id"
+                     " GROUP BY Account.id").params(task_id=task_id)
         res = db.engine.execute(stmt)
 
         response = []
         for row in res:
-            response.append({"id":row[0], "name":row[1]})
+            response.append({"name":row[0]})
         return response
+
+    def __init__(self, account_id, task_id):
+        self.account_id = account_id
+        self.task_id = task_id
