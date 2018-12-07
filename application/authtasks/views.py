@@ -24,7 +24,7 @@ def tasks_information(task_id):
 
 @app.route("/information/moi")
 @login_required()
-def information_osallistu():
+def task_osallistu():
     
     return redirect(url_for("authtasks/bile.html"))
 

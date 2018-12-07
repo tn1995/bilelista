@@ -1,5 +1,6 @@
 from application import db
 from application.models import Base
+from sqlalchemy.sql import text
 
 class UserTask(Base):
     id = db.Column(db.Integer, primary_key=True)
@@ -13,17 +14,15 @@ class UserTask(Base):
     task_id = db.Column(db.Integer, db.ForeignKey('task.id'),
                            nullable=False)
 
-#@staticmethod
-#    def find_osallistujat(done='1'):
- #       stmt = text("SELECT Account.id, Account.name FROM user_task"
-  #                   " LEFT JOIN Task ON Task.account_id = Account.id"
-   #                  " WHERE (Task.done IS null OR Task.done = :done)"
-    #                 " GROUP BY Account.id"
-     #                " HAVING COUNT(Task.id) = 0").params(done=done)
-      #  res = db.engine.execute(stmt)
-#
- #       response = []
-  #      for row in res:
-   #         response.append({"id":row[0], "name":row[1]})
-#
- #       return response
+    @staticmethod
+    def find_tasks_osallistujat():
+        stmt = text("SELECT Account.name FROM Account"
+                     " LEFT JOIN User_task ON User_task.account_id = Account.id"
+                     " WHERE (User_task.account_id = Account.id)"
+                     " GROUP BY Account.id")
+        res = db.engine.execute(stmt)
+
+        response = []
+        for row in res:
+            response.append({"id":row[0], "name":row[1]})
+        return response
