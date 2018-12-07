@@ -11,15 +11,24 @@
           {{ form.name.label }}
           </td>
           <td>
-          {{ form.name }}
+          {{ form.name(class_="form-control") }}
           </td>
-      </tr>        
+          <td>
+              <ul>
+                {% for error in form.name.errors %}
+                <li>{{ error }}</li>
+                <p>Käyttäjänimen tulee olla 2-10 kirjainta</p> 
+                {% endfor %}
+              </ul>
+            </td>   
+      </tr>     
+     
       <tr>
             <td>
             {{ form.username.label }}
             </td>
             <td>
-            {{ form.username }}
+            {{ form.username(class_="form-control")}}
             </td>
       </tr>
       <tr>
@@ -27,12 +36,12 @@
             {{ form.password.label }}
             </td>
             <td>
-            {{ form.password }}
+            {{ form.password(class_="form-control") }}
           </td>
         </tr>
         <tr>
           <td colspan="2">
-          <input type="submit" value="Rekisteröidy"/>
+          <input type="submit" class="btn btn-primary" value="Rekisteröidy"/>
           </td>
         </tr>
     </form>

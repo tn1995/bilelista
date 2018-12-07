@@ -6,6 +6,7 @@
     <tr>
       <th>Bileet</th>
       <th>Done</th>
+      <th>Järjestäjä</th>
       
     </tr>
     {% for task in tasks %}
@@ -14,27 +15,20 @@
       <td><a href="{{ url_for('tasks_information', task_id=task.id) }}">{{ task.name }}</a></td>
       <td>{{ task.done }}</td>
       <td>
-      
+        {{ task.account_name }}
   <form method="POST" action="{{ url_for('tasks_delete', task_id=task.id) }}">
-	  <input type="submit" value="Poista!"/>
+	  <input type="submit" class="btn btn-primary" value="Poista!"/>
+  </form>
+  <form method="POST" action="{{ url_for('tasks_set_done', task_id=task.id) }}">
+    <input type="submit" class="btn btn-primary" value="Done"/>
   </form>
       </td>
+      
+    
     </tr>
     
     {% endfor %}
     
-    {% if tasks_jarjestaja is defined %}
-
-    <ul>
-        
-      {% for user in tasks_jarjestaja %}
-      <th>Järjestäjä</th>
-      <li>
-        {{user.name}}
-      </li>
-      {% endfor %}
-    </ul>
-    {% endif %}
   </table>
 
 

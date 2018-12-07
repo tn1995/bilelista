@@ -4,6 +4,9 @@
   <p>
     
     {{bile.name}}
+    <form method="POST" action="{{ url_for('tasks_osallistu', task_id=bile.id) }}">
+      <input type="submit" class="btn btn-primary" value="Osallistu"/>
+    </form>
     <th>Osallistujat</th>
     {% if tasks_osallistujat is defined %}
 
@@ -19,4 +22,5 @@
     {% endif %}
     
   </p>
+
 {% endblock %}
