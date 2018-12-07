@@ -1,5 +1,6 @@
 from application import db
 from application.models import Base
+from sqlalchemy.sql import text
 
 class Task(Base):
     id = db.Column(db.Integer, primary_key=True)
@@ -16,4 +17,17 @@ class Task(Base):
     def __init__(self, name):
         self.name = name
         self.done = False
-    
+
+    @staticmethod
+    def find_tasks_jarjestaja():
+        stmt = text("SELECT Account.name FROM Account"
+                     " LEFT JOIN Task ON Task.account_id = Account.id"
+                     " WHERE (Task.account_id = Account.id)"
+                     " GROUP BY Account.id")
+        res = db.engine.execute(stmt)
+
+#        response = []
+#        for row in res:
+#            response.append({"name":row[1]})
+
+        return res
