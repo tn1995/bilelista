@@ -11,7 +11,7 @@ from application.auth.forms import LoginForm, SignupForm
 
 @app.route("/tasks/", methods=["GET"])
 def tasks_index():
-    return render_template("tasks/list.html", tasks = Task.query.all(), tasks_jarjestaja=Task.find_tasks_jarjestaja())
+    return render_template("tasks/list.html", tasks = Task.find_lista())
 
 #creates new   
 @app.route("/tasks/new/")
