@@ -1,0 +1,105 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Base	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/models.py	/^class Base(db.Model):$/;"	kind:class	line:3
+LoginForm	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/auth/forms.py	/^class LoginForm(FlaskForm):$/;"	kind:class	line:6
+LoginForm	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/authtasks/forms.py	/^class LoginForm(FlaskForm):$/;"	kind:class	line:6
+Meta	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/auth/forms.py	/^    class Meta:$/;"	kind:class	line:10
+Meta	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/auth/forms.py	/^    class Meta:$/;"	kind:class	line:18
+Meta	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/authtasks/forms.py	/^    class Meta:$/;"	kind:class	line:10
+Meta	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/authtasks/forms.py	/^    class Meta:$/;"	kind:class	line:18
+Meta	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/tasks/forms.py	/^    class Meta:$/;"	kind:class	line:8
+SignupForm	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/auth/forms.py	/^class SignupForm(FlaskForm):$/;"	kind:class	line:13
+SignupForm	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/authtasks/forms.py	/^class SignupForm(FlaskForm):$/;"	kind:class	line:13
+Task	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/tasks/models.py	/^class Task(Base):$/;"	kind:class	line:4
+TaskForm	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/tasks/forms.py	/^class TaskForm(FlaskForm):$/;"	kind:class	line:4
+User	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/auth/models.py	/^class User(Base):$/;"	kind:class	line:5
+UserTask	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/authtasks/models.py	/^class UserTask(Base):$/;"	kind:class	line:4
+__abstract__	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/models.py	/^    __abstract__ = True$/;"	kind:variable	line:5
+__init__	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/auth/models.py	/^    def __init__(self, name):$/;"	kind:member	line:20
+__init__	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/tasks/models.py	/^    def __init__(self, name):$/;"	kind:member	line:16
+__init__.py	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/__init__.py	1;"	kind:file	line:1
+__tablename__	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/auth/models.py	/^    __tablename__ = "account"$/;"	kind:variable	line:7
+account_id	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/authtasks/models.py	/^    account_id = db.Column(db.Integer, db.ForeignKey('account.id'),$/;"	kind:variable	line:11
+account_id	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/tasks/models.py	/^    account_id = db.Column(db.Integer, db.ForeignKey('account.id'),$/;"	kind:variable	line:13
+app	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/__init__.py	/^app = Flask(__name__)$/;"	kind:variable	line:2
+auth_login	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/auth/views.py	/^def auth_login():$/;"	kind:function	line:9
+auth_logout	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/auth/views.py	/^def auth_logout():$/;"	kind:function	line:48
+auth_signup	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/auth/views.py	/^def auth_signup():$/;"	kind:function	line:26
+csrf	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/auth/forms.py	/^        csrf = False$/;"	kind:variable	line:11
+csrf	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/auth/forms.py	/^        csrf = False$/;"	kind:variable	line:19
+csrf	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/authtasks/forms.py	/^        csrf = False$/;"	kind:variable	line:11
+csrf	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/authtasks/forms.py	/^        csrf = False$/;"	kind:variable	line:19
+csrf	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/tasks/forms.py	/^        csrf = False/;"	kind:variable	line:9
+date_created	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/auth/models.py	/^    date_created = db.Column(db.DateTime, default=db.func.current_timestamp())$/;"	kind:variable	line:10
+date_created	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/authtasks/models.py	/^    date_created = db.Column(db.DateTime, default=db.func.current_timestamp())$/;"	kind:variable	line:6
+date_created	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/models.py	/^    date_created = db.Column(db.DateTime, default=db.func.current_timestamp())$/;"	kind:variable	line:8
+date_created	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/tasks/models.py	/^    date_created = db.Column(db.DateTime, default=db.func.current_timestamp())$/;"	kind:variable	line:6
+date_modified	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/auth/models.py	/^    date_modified = db.Column(db.DateTime, default=db.func.current_timestamp(),$/;"	kind:variable	line:11
+date_modified	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/authtasks/models.py	/^    date_modified = db.Column(db.DateTime, default=db.func.current_timestamp(),$/;"	kind:variable	line:7
+date_modified	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/models.py	/^    date_modified = db.Column(db.DateTime, default=db.func.current_timestamp(),$/;"	kind:variable	line:9
+date_modified	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/tasks/models.py	/^    date_modified = db.Column(db.DateTime, default=db.func.current_timestamp(),$/;"	kind:variable	line:7
+db	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/__init__.py	/^db = SQLAlchemy(app)$/;"	kind:variable	line:16
+decorated_view	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/__init__.py	/^        def decorated_view(*args, **kwargs):$/;"	kind:function	line:35
+done	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/tasks/forms.py	/^    done = BooleanField("Done")$/;"	kind:variable	line:6
+done	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/tasks/models.py	/^    done = db.Column(db.Boolean, nullable=False)$/;"	kind:variable	line:11
+find_users_with_no_tasks	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/auth/models.py	/^    def find_users_with_no_tasks(done='1'):$/;"	kind:member	line:39
+forms.py	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/auth/forms.py	1;"	kind:file	line:1
+forms.py	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/authtasks/forms.py	1;"	kind:file	line:1
+forms.py	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/tasks/forms.py	1;"	kind:file	line:1
+get_id	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/auth/models.py	/^    def get_id(self):$/;"	kind:member	line:23
+id	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/auth/models.py	/^    id = db.Column(db.Integer, primary_key=True)$/;"	kind:variable	line:9
+id	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/authtasks/models.py	/^    id = db.Column(db.Integer, primary_key=True)$/;"	kind:variable	line:5
+id	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/models.py	/^    id = db.Column(db.Integer, primary_key=True)$/;"	kind:variable	line:7
+id	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/tasks/models.py	/^    id = db.Column(db.Integer, primary_key=True)$/;"	kind:variable	line:5
+index	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/views.py	/^def index():$/;"	kind:function	line:6
+is_active	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/auth/models.py	/^    def is_active(self):$/;"	kind:member	line:26
+is_anonymous	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/auth/models.py	/^    def is_anonymous(self):$/;"	kind:member	line:29
+is_authenticated	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/auth/models.py	/^    def is_authenticated(self):$/;"	kind:member	line:32
+load_user	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/__init__.py	/^def load_user(user_id):$/;"	kind:function	line:76
+login_manager	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/__init__.py	/^login_manager = LoginManager()$/;"	kind:variable	line:24
+login_required	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/__init__.py	/^def login_required(role="ANY"):$/;"	kind:function	line:32
+models.py	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/auth/models.py	1;"	kind:file	line:1
+models.py	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/authtasks/models.py	1;"	kind:file	line:1
+models.py	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/models.py	1;"	kind:file	line:1
+models.py	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/tasks/models.py	1;"	kind:file	line:1
+name	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/auth/forms.py	/^    name = StringField("name")$/;"	kind:variable	line:14
+name	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/auth/models.py	/^    name = db.Column(db.String(144), nullable=False)$/;"	kind:variable	line:14
+name	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/authtasks/forms.py	/^    name = StringField("name")$/;"	kind:variable	line:14
+name	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/tasks/forms.py	/^    name = StringField("Task name", [validators.Length(min=2)])$/;"	kind:variable	line:5
+name	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/tasks/models.py	/^    name = db.Column(db.String(144), nullable=False)$/;"	kind:variable	line:10
+nullable	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/authtasks/models.py	/^                           nullable=False)$/;"	kind:variable	line:12
+nullable	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/authtasks/models.py	/^                           nullable=False)$/;"	kind:variable	line:14
+nullable	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/tasks/models.py	/^                           nullable=False)$/;"	kind:variable	line:14
+onupdate	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/auth/models.py	/^                              onupdate=db.func.current_timestamp())$/;"	kind:variable	line:12
+onupdate	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/authtasks/models.py	/^    onupdate=db.func.current_timestamp())$/;"	kind:variable	line:8
+onupdate	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/models.py	/^        onupdate=db.func.current_timestamp())/;"	kind:variable	line:10
+onupdate	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/tasks/models.py	/^    onupdate=db.func.current_timestamp())$/;"	kind:variable	line:8
+password	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/auth/forms.py	/^    password = PasswordField("Password")$/;"	kind:variable	line:16
+password	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/auth/forms.py	/^    password = PasswordField("Password")$/;"	kind:variable	line:8
+password	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/auth/models.py	/^    password = db.Column(db.String(144), nullable=False)$/;"	kind:variable	line:16
+password	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/authtasks/forms.py	/^    password = PasswordField("Password")$/;"	kind:variable	line:16
+password	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/authtasks/forms.py	/^    password = PasswordField("Password")$/;"	kind:variable	line:8
+roles	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/auth/models.py	/^    def roles(self):$/;"	kind:member	line:35
+run.py	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/run.py	1;"	kind:file	line:1
+task_id	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/authtasks/models.py	/^    task_id = db.Column(db.Integer, db.ForeignKey('task.id'),$/;"	kind:variable	line:13
+tasks	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/auth/models.py	/^    tasks = db.relationship("Task", backref='account', lazy=True)$/;"	kind:variable	line:18
+tasks_create	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/tasks/views.py	/^def tasks_create():$/;"	kind:function	line:46
+tasks_delete	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/tasks/views.py	/^def tasks_delete(task_id):$/;"	kind:function	line:32
+tasks_form	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/tasks/views.py	/^def tasks_form():$/;"	kind:function	line:16
+tasks_index	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/tasks/views.py	/^def tasks_index():$/;"	kind:function	line:10
+tasks_information	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/authtasks/views.py	/^def tasks_information():$/;"	kind:function	line:20
+tasks_set_done	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/tasks/views.py	/^def tasks_set_done(task_id):$/;"	kind:function	line:22
+username	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/auth/forms.py	/^    username = StringField("Username")$/;"	kind:variable	line:15
+username	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/auth/forms.py	/^    username = StringField("Username")$/;"	kind:variable	line:7
+username	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/auth/models.py	/^    username = db.Column(db.String(144), nullable=False)$/;"	kind:variable	line:15
+username	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/authtasks/forms.py	/^    username = StringField("Username")$/;"	kind:variable	line:15
+username	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/authtasks/forms.py	/^    username = StringField("Username")$/;"	kind:variable	line:7
+views.py	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/auth/views.py	1;"	kind:file	line:1
+views.py	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/authtasks/views.py	1;"	kind:file	line:1
+views.py	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/tasks/views.py	1;"	kind:file	line:1
+views.py	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/views.py	1;"	kind:file	line:1
+wrapper	../../../ad/lxhome/t/tuomasnu/Linux/bilelista/application/__init__.py	/^    def wrapper(fn):$/;"	kind:function	line:33
