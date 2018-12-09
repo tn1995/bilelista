@@ -39,10 +39,7 @@ def tasks_osallistu(task_id):
 @app.route("/information/delete/<task_id>/", methods=["POST"])
 @login_required()
 def osallistuminen_delete(task_id):
-#    t = UserTask(task_id)
-#    if t.account_id != current_user.id:
-#        return redirect(url_for("tasks_information", task_id=task_id))
-
+    
     UserTask.delete_osallistuja(current_user.id, task_id)
     return redirect(url_for("tasks_information", task_id=task_id))
 

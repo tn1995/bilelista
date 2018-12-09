@@ -34,9 +34,6 @@ class UserTask(Base):
                     " AND User_task.task_id = task_id").params(account_id=account_id, task_id=task_id)
         res = db.engine.execute(stmt)
 
-        #response = []
-        #for row in res:
-        #    response.append({"name":row[0]})
         return res
 
     def __init__(self, account_id, task_id):
