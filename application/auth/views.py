@@ -13,7 +13,7 @@ def auth_login():
     form = LoginForm(request.form)
     # mahdolliset validoinnit
 
-    useri = User.query.filter_by(username=form.username.data, password=form.password.data).first()
+    user = User.query.filter_by(username=form.username.data, password=form.password.data).first()
     
     if not user:
         return render_template("auth/loginform.html", form = form,
