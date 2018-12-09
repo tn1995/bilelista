@@ -18,14 +18,34 @@
     {% endfor %}
   </ul>
 </td>
+<td>
+    {{ form.date(class_="form-control") }}
+  </td>
+  <td>
+    <ul>
+      {% for error in form.date.errors %}
+      <li> Laita päivämäärä muodossa pp.kk.vvvv </li>
+      {% endfor %}
+    </ul>
+    
+</td>
     </tr>
+
     <tr>
+
+    
 <td>
   {{ form.done.label }}
 </td>
 <td>
   {{ form.done }}
 </td>
+
+
+	<td>
+	  {{ form.date.label }}
+	</td>
+
 <td>
 </td>
     </tr>

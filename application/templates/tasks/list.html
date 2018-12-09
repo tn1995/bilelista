@@ -5,7 +5,10 @@
       <th>Napauta bileitä nähdäksesi osallistujat ja voit myös itse osallistua</th>
     <tr>
       <th>Bileet</th>
-      <th>Done</th>
+
+      <th>Päivämäärä &nbsp;&nbsp;</th>
+      <th>Ovatko bileet jo alkaneet &nbsp;&nbsp;&nbsp;</th>
+
       <th>Järjestäjä</th>
       
     </tr>
@@ -13,14 +16,16 @@
     <tr>
       
       <td><a href="{{ url_for('tasks_information', task_id=task.id) }}">{{ task.name }}</a></td>
+      <td>{{ task.date }}</td>
       <td>{{ task.done }}</td>
+
       <td>
         {{ task.account_name }}
   <form method="POST" action="{{ url_for('tasks_delete', task_id=task.id) }}">
 	  <input type="submit" class="btn btn-primary" value="Poista!"/>
   </form>
   <form method="POST" action="{{ url_for('tasks_set_done', task_id=task.id) }}">
-    <input type="submit" class="btn btn-primary" value="Done"/>
+    <input type="submit" class="btn btn-primary" value="Käynnissä"/>
   </form>
       </td>
       
