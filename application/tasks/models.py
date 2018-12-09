@@ -19,13 +19,13 @@ class Task(Base):
         self.done = False
 
 
-
+    #Show all parties
     @staticmethod
     def find_lista():
         stmt = text("SELECT Account.name AS account_name, Task.id, Task.done, Task.name FROM Account"
                      " LEFT JOIN Task ON Task.account_id = Account.id"
                      " WHERE (Task.account_id = Account.id)"
-                     " GROUP BY Task.id")
+                     " GROUP BY Task.id, account.name")
         res = db.engine.execute(stmt)
 
 #        response = []
