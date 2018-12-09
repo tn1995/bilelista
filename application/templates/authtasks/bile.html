@@ -5,7 +5,7 @@
       <p style="font-size:30px">{{bile.name}}</p>
     
     {{bile.date}}
-    {{bile.klo}}
+    <p>Klo {{bile.klo}}</p>
     <br /> <br />
     <form method="POST" action="{{ url_for('tasks_osallistu', task_id=bile.id) }}">
       <input type="submit" class="btn btn-primary" value="Osallistu"/>
