@@ -35,45 +35,14 @@ def tasks_osallistu(task_id):
   
     return redirect(url_for("tasks_information", task_id=task_id))
 
-
-  
-#@app.route("/tasks/<task_id>/", methods=["POST"])
-#@login_required()
-#def tasks_set_done(task_id):
-
-#    t = Task.query.get(task_id)
-#    t.done = True
-#    db.session().commit()
-
-  
-#    return redirect(url_for("tasks_index"))
+#delete osallistu
 @app.route("/information/delete/<task_id>/", methods=["POST"])
 @login_required()
 def osallistuminen_delete(task_id):
-    account_id = current_user.id
-    UserTask.delete_osallistuja(account_id, task_id)
-#    t = UserTask.query.get(task_id)
+#    t = UserTask(task_id)
+#    if t.account_id != current_user.id:
+#        return redirect(url_for("tasks_information", task_id=task_id))
 
-#    db.session().delete(t)
-#    db.session().commit()
-    
-  
+    UserTask.delete_osallistuja(current_user.id, task_id)
     return redirect(url_for("tasks_information", task_id=task_id))
 
-  
-#@app.route("/tasks/", methods=["POST"])
-#@login_required()
-#def tasks_create():
-#    form = TaskForm(request.form)
-  
-#    if not form.validate():
-#        return render_template("tasks/new.html", form = form)
-  
-#    t = Task(form.name.data)
-#    t.done = form.done.data
-   # t.account_id = current_user.id
-  
-  #  db.session().add(t)
- #   db.session().commit()
-  
-#    return redirect(url_for("tasks_index"))

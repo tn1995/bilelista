@@ -30,8 +30,8 @@ class UserTask(Base):
     @staticmethod
     def delete_osallistuja(account_id, task_id):
         stmt = text("DELETE FROM user_task"
-                    " WHERE (User_task.account_id = account_id)"
-                    " AND User_task.task_id = :task_id").params(account_id=account_id, task_id=task_id)
+                    " WHERE User_task.account_id = account_id"
+                    " AND User_task.task_id = task_id").params(account_id=account_id, task_id=task_id)
         res = db.engine.execute(stmt)
 
         #response = []
