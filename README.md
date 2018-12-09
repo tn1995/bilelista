@@ -1,6 +1,6 @@
 # bilelista
 Sovellukseen voi lisätä omia bileitä, joihin muut kirjautuneet käyttäjät voivat osallistua. Sovellukseen pitää kirjautua, ennen kuin voi ilmoittautua tai luoda uusia bileitä. Vain bileet luonut käyttäjä voi poistaa omat bileensä. Etusivu on kirjautumissivu, jossa on myös linkki rekisteröitymiseen. Kirjautumisen jälkeen tulee lista bileistä sekä nappi, josta pääsee luomaan uudet bileet. Valitsemiaan bileitä klikkaamalla näkee listan osallistujista, sekä pystyy laittamaan osallistuvansa niihin. Oman osallistumisensa voi poistaa.
-  Tarvitaan todennäköisesti 4 tietokantataulua. Account, User_task, Task ja Location.
+  Tällä hetkellä käytössä 3 tietokantataulua: Account, User_task, Task ja Location. Tarvitaan todennäköisesti 4 tietokantataulua. Account, User_task, Task ja Location.
   
 [linkki sovellukseen](https://bilelista.herokuapp.com/)
 
@@ -26,6 +26,38 @@ Tämänhetkiset toiminnallisuudet:
 Puuttuvat toiminnallisuudet ja ongelmat:
 - Osallistumisen poisto poistaa kaikkien samoihin bileisiin osallistuneiden osallistumisen
 - Bileiden sijainti ja päivämäärä pitää vielä saada näkyviin
+
+#CREATE TABLE- komennot
+CREATE TABLE user_task (
+	id INTEGER NOT NULL, 
+	date_created DATETIME, 
+	date_modified DATETIME, 
+	account_id INTEGER NOT NULL, 
+	task_id INTEGER NOT NULL, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(account_id) REFERENCES account (id), 
+	FOREIGN KEY(task_id) REFERENCES task (id))
+	
+CREATE TABLE user_task (
+	id INTEGER NOT NULL, 
+	date_created DATETIME, 
+	date_modified DATETIME, 
+	account_id INTEGER NOT NULL, 
+	task_id INTEGER NOT NULL, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(account_id) REFERENCES account (id), 
+	FOREIGN KEY(task_id) REFERENCES task (id))
+	
+CREATE TABLE account (
+	id INTEGER NOT NULL, 
+	date_created DATETIME, 
+	date_modified DATETIME, 
+	name VARCHAR(144) NOT NULL, 
+	username VARCHAR(144) NOT NULL, 
+	password VARCHAR(144) NOT NULL, 
+	PRIMARY KEY (id)
+
+
 
 # Omat kokemukset
 Materiaalit ovat hyvät ja sovelluksen tekeminen on ollut hauskaa. On hyvä, että tekemisen tueksi on järjestetty paja, sillä siitä on ollut reilusti apua.
