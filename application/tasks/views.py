@@ -25,7 +25,15 @@ def tasks_form():
 def tasks_set_done(task_id):
 
     t = Task.query.get(task_id)
-    t.done = True
+    if t.account_id != current_user.id:
+        return redirect(url_for("tasks_index"))
+    if t.done == False:
+        t.done = True
+        db.session().commit()
+        return redirect(url_for("tasks_index"))
+
+    if t.done == True:
+        t.done = False
     db.session().commit()
 
   
@@ -49,32 +57,18 @@ def tasks_delete(task_id):
 @login_required()
 def tasks_create():
     form = TaskForm(request.form)
-  
+    
     if not form.validate():
         return render_template("tasks/new.html", form = form)
-  
-    t = Task(form.name.data)
-    t.done = form.done.data
+    
+    t = Task(form.name.data, form.done.data, form.date.data)
+#    t.done = form.done.data
+#    t.date = form.date.data
     t.account_id = current_user.id
+    
   
     db.session().add(t)
     db.session().commit()
   
     return redirect(url_for("tasks_index"))
 
-
-
-@app.route("/tasks/<task_id>/", methods=["POST"])
-@login_required()
-def tasks_participate(task_id):
-    a = User.get_id
-    t = Task.query.get(task_id)
-    b = UserTask(f)
-    db.session().commit()
-
-  
-    return redirect(url_for("tasks_index"))
-
-#@app.route('/tasks')
-#def tasks_index():
-#    return render_template("tasks/list.html", tasks_jarjestaja=Task.find_tasks_jarjestaja())
