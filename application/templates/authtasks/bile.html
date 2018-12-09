@@ -17,6 +17,10 @@
       <li>
         {{user.name}}
       </li>
+
+      <form method="POST" action="{{ url_for('osallistuminen_delete', task_id=bile.id) }}">
+        <input type="submit" class="btn btn-primary" value="Poista!"/>
+      </form>
       {% endfor %}
     </ul>
     {% endif %}
