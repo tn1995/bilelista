@@ -10,20 +10,22 @@ class Task(Base):
     name = db.Column(db.String(144), nullable=False)
     done = db.Column(db.Boolean, nullable=False)
     date = db.Column(db.String, nullable=False)
+    klo = db.Column(db.String, nullable=False)
     #location_id = db.Column(db.Integer, db.ForeignKey('location.id'),
     #                       nullable=False)
     account_id = db.Column(db.Integer, db.ForeignKey('account.id'),
                            nullable=False)
 
-    def __init__(self, name, done, date):
+    def __init__(self, name, done, date, klo):
         self.name = name
         self.done = False
         self.date = date
+        self.klo = klo
 
     #Show all partys
     @staticmethod
     def find_lista():
-        stmt = text("SELECT Account.name AS account_name, Task.id, Task.done, Task.name, Task.date FROM Account"
+        stmt = text("SELECT Account.name AS account_name, Task.id, Task.done, Task.name, Task.date, Task.klo FROM Account"
                      " LEFT JOIN Task ON Task.account_id = Account.id"
                      " WHERE (Task.account_id = Account.id)"
                      " GROUP BY Task.id, account.name")

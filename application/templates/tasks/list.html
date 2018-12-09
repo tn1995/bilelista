@@ -6,7 +6,9 @@
     <tr>
       <th>Bileet</th>
 
-      <th>Päivämäärä &nbsp;&nbsp;</th>
+      <th>Pvm &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </th>
+      <th>Klo &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
       <th>Ovatko bileet jo alkaneet &nbsp;&nbsp;&nbsp;</th>
 
       <th>Järjestäjä</th>
@@ -17,8 +19,9 @@
       
       <td><a href="{{ url_for('tasks_information', task_id=task.id) }}">{{ task.name }}</a></td>
       <td>{{ task.date }}</td>
+      <td>{{ task.klo }}</td>
       <td>{{ task.done }}</td>
-
+      
       <td>
         {{ task.account_name }}
   <form method="POST" action="{{ url_for('tasks_delete', task_id=task.id) }}">

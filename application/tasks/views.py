@@ -61,9 +61,8 @@ def tasks_create():
     if not form.validate():
         return render_template("tasks/new.html", form = form)
     
-    t = Task(form.name.data, form.done.data, form.date.data)
-#    t.done = form.done.data
-#    t.date = form.date.data
+    t = Task(form.name.data, form.done.data, form.date.data, form.klo.data)
+
     t.account_id = current_user.id
     
   

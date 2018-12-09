@@ -29,6 +29,17 @@
     </ul>
     
 </td>
+<td>
+    {{ form.klo(class_="form-control") }}
+  </td>
+<td>
+    <ul>
+      {% for error in form.klo.errors %}
+      
+      {% endfor %}
+    </ul>
+    
+</td>
 
     </tr>
 
