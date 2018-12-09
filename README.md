@@ -1,6 +1,6 @@
 # bilelista
 Sovellukseen voi lisätä omia bileitä, joihin muut kirjautuneet käyttäjät voivat osallistua. Sovellukseen pitää kirjautua, ennen kuin voi ilmoittautua tai luoda uusia bileitä. Vain bileet luonut käyttäjä voi poistaa omat bileensä. Etusivu on kirjautumissivu, jossa on myös linkki rekisteröitymiseen. Kirjautumisen jälkeen tulee lista bileistä sekä nappi, josta pääsee luomaan uudet bileet. Valitsemiaan bileitä klikkaamalla näkee listan osallistujista, sekä pystyy laittamaan osallistuvansa niihin. Oman osallistumisensa voi poistaa.
-  Tällä hetkellä käytössä 3 tietokantataulua: Account, User_task, Task ja Location. Tarvitaan todennäköisesti 4 tietokantataulua. Account, User_task, Task ja Location.
+  Tällä hetkellä käytössä 3 tietokantataulua: Account, User_task ja Task. Tarvitaan todennäköisesti 4 tietokantataulua. Account, User_task, Task ja Location.
   
 [linkki sovellukseen](https://bilelista.herokuapp.com/)
 
@@ -25,7 +25,7 @@ Tämänhetkiset toiminnallisuudet:
 
 Puuttuvat toiminnallisuudet ja ongelmat:
 - Osallistumisen poisto poistaa kaikkien samoihin bileisiin osallistuneiden osallistumisen
-- Bileiden sijainti ja päivämäärä pitää vielä saada näkyviin
+- Bileiden sijainti pitää vielä saada näkyviin
 
 #CREATE TABLE- komennot
 CREATE TABLE user_task (
