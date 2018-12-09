@@ -42,7 +42,9 @@
             {{ form.password(class_="form-control") }}
           </td>
         </tr>
-
+        {% for error in form.password.errors %}
+        <li>{{ error }}</li>
+          {% endfor %}
         <tr>
           <td>
           {{ form.repeatpassword.label }}

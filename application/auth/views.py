@@ -33,7 +33,11 @@ def auth_signup():
     
     user = User.query.filter_by(username=form.username.data).first()
 
-    if len(form.username.data) < 3 | len(form.username.data) > 20:
+    if len(form.username.data) < 3:
+        return render_template("auth/signupform.html", form = form,
+                                error = "Käyttäjätunnuksen tulee olla vähintää 3 merkkiä ja enintään 20 merkkiä")
+
+    if len(form.username.data) > 20:
         return render_template("auth/signupform.html", form = form,
                                 error = "Käyttäjätunnuksen tulee olla vähintää 3 merkkiä ja enintään 20 merkkiä")
 
@@ -44,9 +48,14 @@ def auth_signup():
         return render_template("auth/signupform.html", form = form,
                                 error = "Salasanat eivät täsmää")
 
-    if len(form.password.data) < 3 | len(form.password.data) > 20:
+    if len(form.password.data) < 3:
         return render_template("auth/signupform.html", form = form,
                                 error = "Salasanan tulee olla vähintää 3 merkkiä ja enintään 20 merkkiä")
+    
+    if len(form.password.data) > 20:
+        return render_template("auth/signupform.html", form = form,
+                                error = "Salasanan tulee olla vähintää 3 merkkiä ja enintään 20 merkkiä")
+
     account = User(form.name.data)
     account.username = form.username.data
     account.password = form.password.data
