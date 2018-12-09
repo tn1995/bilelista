@@ -19,6 +19,7 @@ class Task(Base):
         self.done = False
 
 
+
     @staticmethod
     def find_lista():
         stmt = text("SELECT Account.name AS account_name, Task.id, Task.done, Task.name FROM Account"
