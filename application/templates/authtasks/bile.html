@@ -2,8 +2,11 @@
 
 {% block body %}
   <p>
+      <p style="font-size:30px">{{bile.name}}</p>
     
-    {{bile.name}}
+    {{bile.date}}
+    {{bile.klo}}
+    <br /> <br />
     <form method="POST" action="{{ url_for('tasks_osallistu', task_id=bile.id) }}">
       <input type="submit" class="btn btn-primary" value="Osallistu"/>
     </form>
@@ -22,6 +25,7 @@
         
         <input type="submit" class="btn btn-primary" value="Poista!"/>
       </form>
+      
       {% endfor %}
     </ul>
     {% endif %}
