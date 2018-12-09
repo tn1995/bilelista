@@ -40,6 +40,10 @@ def auth_signup():
     if len(form.username.data) > 20:
         return render_template("auth/signupform.html", form = form,
                                 error = "Käyttäjätunnuksen tulee olla vähintää 3 merkkiä ja enintään 20 merkkiä")
+    if len(form.name.data) < 1:
+        return render_template("auth/signupform.html", form = form,
+                                error = "Et laittanut nimeäsi")
+
 
     if user:
         return render_template("auth/signupform.html", form = form,
@@ -62,7 +66,6 @@ def auth_signup():
   
     db.session().add(account)
     db.session().commit()
-    #login_user(user)
     return redirect(url_for("index"))   
 
 @app.route("/auth/logout")
