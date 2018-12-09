@@ -17,17 +17,29 @@ class UserTask(Base):
     @staticmethod
     def find_tasks_osallistujat(task_id):
         stmt = text("SELECT Account.name FROM Account"
-                     " LEFT JOIN User_task ON User_task.account_id = Account.id"
-                     " WHERE (User_task.account_id = Account.id)"
-                     " AND User_task.task_id = :task_id"
-                     " GROUP BY Account.id").params(task_id=task_id)
+                    " LEFT JOIN User_task ON User_task.account_id = Account.id"
+                    " WHERE (User_task.account_id = Account.id)"
+                    " AND User_task.task_id = :task_id"
+                    " GROUP BY Account.id").params(task_id=task_id)
         res = db.engine.execute(stmt)
 
         response = []
         for row in res:
             response.append({"name":row[0]})
         return response
+    @staticmethod
+    def delete_osallistuja(account_id, task_id):
+        stmt = text("DELETE FROM user_task"
+                    " WHERE (User_task.account_id = account_id)"
+                    " AND User_task.task_id = :task_id").params(account_id=account_id, task_id=task_id)
+        res = db.engine.execute(stmt)
+
+        #response = []
+        #for row in res:
+        #    response.append({"name":row[0]})
+        return res
 
     def __init__(self, account_id, task_id):
         self.account_id = account_id
         self.task_id = task_id
+
