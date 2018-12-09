@@ -12,6 +12,7 @@ class SignupForm(FlaskForm):
     name = StringField("name", [validators.Length(min=2, max=10)])
     username = StringField("Username", [validators.Length(min=2, max=10)])
     password = PasswordField("Password",  [validators.Length(min=2, max=10)])
+    repeatpassword = PasswordField("Repeat", [validators.Length(min=2, max=10)])
   
     class Meta:
         csrf = False
