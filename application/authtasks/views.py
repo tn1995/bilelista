@@ -20,26 +20,27 @@ def information_index():
 def tasks_information(task_id):
     t = Task.query.get(task_id)
 
-    return render_template("authtasks/bile.html", bile = t, tasks_osallistujat=UserTask.find_tasks_osallistujat(task_id))
+    return render_template("authtasks/bile.html", bile = t, tasks_osallistujat=UserTask.find_tasks_participators(task_id))
 
 
 #take part in party  
 @app.route("/information/osallistu/<task_id>", methods=["POST"])
 @login_required()
-def tasks_osallistu(task_id):
+def tasks_participate(task_id):
     t=UserTask(current_user.id, task_id)
-    
+
   
     db.session().add(t)
     db.session().commit()
   
     return redirect(url_for("tasks_information", task_id=task_id))
 
-#delete osallistu
+#delete participation
 @app.route("/information/delete/<task_id>/", methods=["POST"])
 @login_required()
-def osallistuminen_delete(task_id):
+def participation_delete(task_id):
     
-    UserTask.delete_osallistuja(current_user.id, task_id)
+    
+    UserTask.delete_participator(current_user.id, task_id)
     return redirect(url_for("tasks_information", task_id=task_id))
 

@@ -9,13 +9,13 @@ class UserTask(Base):
     onupdate=db.func.current_timestamp())
 
 
-    account_id = db.Column(db.Integer, db.ForeignKey('account.id'),
+    location = db.Column(db.Integer, db.ForeignKey('account.id'),
                            nullable=False)
     task_id = db.Column(db.Integer, db.ForeignKey('task.id'),
                            nullable=False)
 
     @staticmethod
-    def find_tasks_participators(task_id):
+    def find_tasks_osallistujat(task_id):
         stmt = text("SELECT Account.name FROM Account"
                     " LEFT JOIN User_task ON User_task.account_id = Account.id"
                     " WHERE (User_task.account_id = Account.id)"
@@ -28,7 +28,7 @@ class UserTask(Base):
             response.append({"name":row[0]})
         return response
     @staticmethod
-    def delete_participator(account_id, task_id):
+    def delete_osallistuja(account_id, task_id):
         stmt = text("DELETE FROM user_task"
                     " WHERE User_task.account_id = :account_id"
                     " AND User_task.task_id = :task_id").params(account_id=account_id, task_id=task_id)
