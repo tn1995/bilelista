@@ -58,6 +58,22 @@ CREATE TABLE account (
 	password VARCHAR(144) NOT NULL, 
 	PRIMARY KEY (id)
 
+# SQL-kyselyt
+Listataan kaikki bileet:
+
+SELECT Account.name AS account_name, Task.id, Task.done, Task.name, Task.date, Task.klo, Task.location FROM Account LEFT JOIN Task ON Task.account_id = Account.id WHERE Task.account_id = Account.id GROUP BY Task.id, account.name
+
+Listataan kaikki valittuihin bileisiin osallistujat:
+
+SELECT Account.name FROM Account LEFT JOIN User_task ON User_task.account_id = Account.id WHERE User_task.account_id = Account.id AND User_task.task_id = :task_id GROUP BY Account.id
+
+Poistetaan osallistuja bileistä:
+
+DELETE FROM user_task WHERE User_task.account_id = :account_id AND User_task.task_id = :task_id
+
+Näytetään osallistujat, jotka eivät ole luoneet bileitä:
+
+SELECT Account.id, Account.name FROM Account LEFT JOIN Task ON Task.account_id = Account.id WHERE Task.done IS null OR Task.done = :done GROUP BY Account.id HAVING COUNT(Task.id) = 0
 
 
 # Omat kokemukset
