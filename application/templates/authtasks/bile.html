@@ -5,7 +5,8 @@
       <p style="font-size:30px">{{bile.name}}</p>
     
     {{bile.date}}
-    <p>Klo {{bile.klo}}</p>
+    <p>Klo {{bile.klo}}</p> 
+    <p>Sijainti: {{bile.location}}</p>
     <br /> <br />
     <form method="POST" action="{{ url_for('tasks_participate', task_id=bile.id) }}">
       <input type="submit" class="btn btn-primary" value="Osallistu"/>

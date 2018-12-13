@@ -6,6 +6,7 @@ class TaskForm(FlaskForm):
     done = BooleanField("Ovatko bileet jo alkaneet")
     date = DateField("Pvm", format='%d.%m.%Y')
     klo = StringField("Klo")
+    location = StringField("Sijainti")
   
     class Meta:
         csrf = False

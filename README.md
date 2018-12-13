@@ -27,7 +27,8 @@ Puuttuvat toiminnallisuudet ja ongelmat:
 - Osallistumisen poisto poistaa kaikkien samoihin bileisiin osallistuneiden osallistumisen
 - Bileiden sijainti pitää vielä saada näkyviin
 
-#CREATE TABLE- komennot
+# CREATE TABLE- komennot
+
 CREATE TABLE user_task (
 	id INTEGER NOT NULL, 
 	date_created DATETIME, 
