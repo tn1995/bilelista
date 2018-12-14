@@ -38,7 +38,7 @@ class Task(Base):
         stmt = text("SELECT Task.name FROM Account"
                      " LEFT JOIN Task ON Account.id = Task.account_id"
                      " WHERE (Account.username = :username)"
-                     " GROUP BY Account.id").params(username=username)
+                     " GROUP BY Account.id, task.name").params(username=username)
         res = db.engine.execute(stmt)
 
         response = []
