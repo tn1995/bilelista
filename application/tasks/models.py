@@ -32,7 +32,7 @@ class Task(Base):
         res = db.engine.execute(stmt)
 
         return res
-
+    #Shows chosen users partys
     @staticmethod
     def find_users_tasks(username):
         stmt = text("SELECT Task.id, Task.name, Task.date FROM Account"

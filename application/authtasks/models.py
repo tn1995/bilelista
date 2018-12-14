@@ -13,7 +13,7 @@ class UserTask(Base):
                            nullable=False)
     task_id = db.Column(db.Integer, db.ForeignKey('task.id'),
                            nullable=False)
-
+    #Shows participators for chosen party
     @staticmethod
     def find_tasks_participators(task_id):
         stmt = text("SELECT Account.username FROM Account"
@@ -27,6 +27,7 @@ class UserTask(Base):
         for row in res:
             response.append({"username":row[0]})
         return response
+    #Deletes your own participation
     @staticmethod
     def delete_participator(account_id, task_id):
         stmt = text("DELETE FROM user_task"
@@ -39,6 +40,7 @@ class UserTask(Base):
     def __init__(self, account_id, task_id):
         self.account_id = account_id
         self.task_id = task_id
+    #Deletes participator from user_task if task is deleted    
     @staticmethod
     def delete_participator_for_deleted_task(task_id):
         stmt = text("DELETE FROM user_task"
