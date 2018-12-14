@@ -35,7 +35,7 @@ class Task(Base):
 
     @staticmethod
     def find_users_tasks(username):
-        stmt = text("SELECT Task.name FROM Account"
+        stmt = text("SELECT Task.id, Task.name, Task.date FROM Account"
                      " LEFT JOIN Task ON Account.id = Task.account_id"
                      " WHERE (Account.username = :username)"
                      " GROUP BY Account.id, task.name").params(username=username)
@@ -43,7 +43,7 @@ class Task(Base):
 
         response = []
         for row in res:
-            response.append({"name":row[0]})
+            response.append({"id":row[0], "name":row[1], "date":row[2]})
 
         return response
         

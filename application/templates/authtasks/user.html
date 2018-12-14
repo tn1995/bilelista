@@ -40,7 +40,8 @@
     
   <tr>
   {% for task in users_tasks %}
-  <td>{{ task.name }}</td>    
+  <td><a href="{{ url_for('tasks_information', task_id=task.id) }}">{{ task.name }}</a></td> 
+  <td>{{ task.date }}</td>    
   
 
 </tr>
