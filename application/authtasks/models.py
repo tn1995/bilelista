@@ -39,6 +39,13 @@ class UserTask(Base):
     def __init__(self, account_id, task_id):
         self.account_id = account_id
         self.task_id = task_id
+    @staticmethod
+    def delete_participator_for_deleted_task(task_id):
+        stmt = text("DELETE FROM user_task"
+                    " WHERE User_task.task_id = :task_id").params(task_id=task_id)
+        res = db.engine.execute(stmt)
+
+        return res
 
     #@staticmethod
     #def find_users_task_count(user_id):

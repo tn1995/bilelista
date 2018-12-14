@@ -5,6 +5,8 @@ from application import app, db, login_required
 from application.tasks.models import Task
 from application.tasks.forms import TaskForm
 
+from application.authtasks.models import UserTask
+
 from application.auth.models import User
 from application.auth.forms import LoginForm, SignupForm
 
@@ -44,8 +46,10 @@ def tasks_set_done(task_id):
 def tasks_delete(task_id):
 
     t = Task.query.get(task_id)
+
     if t.account_id != current_user.id:
         return redirect(url_for("tasks_index"))
+    UserTask.delete_participator_for_deleted_task(task_id)
     db.session().delete(t)
     db.session().commit()
     
