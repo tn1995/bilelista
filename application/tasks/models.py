@@ -28,7 +28,7 @@ class Task(Base):
         stmt = text("SELECT Account.username AS account_username, Task.id, Task.done, Task.name, Task.date, Task.klo, Task.location FROM Account"
                      " LEFT JOIN Task ON Task.account_id = Account.id"
                      " WHERE (Task.account_id = Account.id)"
-                     " GROUP BY Task.id, account.name")
+                     " GROUP BY Task.id, account.username")
         res = db.engine.execute(stmt)
 
         return res
