@@ -25,8 +25,8 @@
      
       <td>{{ task.done }}</td>
       <td>{{task.location}}</td>
-      <td>
-        {{ task.account_name }}</td>
+      
+      <td><a href="{{ url_for('user_information', username=task.account_username) }}">{{ task.account_username }}</a></td>
 
         <td>
   <form method="POST" action="{{ url_for('tasks_delete', task_id=task.id) }}">

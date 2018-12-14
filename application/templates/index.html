@@ -13,8 +13,9 @@
 <ul>
   {% for user in needs_tasks %}
   <li>
-    {{user.id}} {{user.name}}
+    {{user.id}} <td><a href="{{ url_for('user_information', username=user.username) }}">{{ user.username }}</a></td>({{user.name}})
   </li>
+  
   {% endfor %}
 </ul>
 

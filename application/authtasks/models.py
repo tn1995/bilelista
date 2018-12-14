@@ -16,7 +16,7 @@ class UserTask(Base):
 
     @staticmethod
     def find_tasks_participators(task_id):
-        stmt = text("SELECT Account.name FROM Account"
+        stmt = text("SELECT Account.username FROM Account"
                     " LEFT JOIN User_task ON User_task.account_id = Account.id"
                     " WHERE (User_task.account_id = Account.id)"
                     " AND User_task.task_id = :task_id"
@@ -25,7 +25,7 @@ class UserTask(Base):
 
         response = []
         for row in res:
-            response.append({"name":row[0]})
+            response.append({"username":row[0]})
         return response
     @staticmethod
     def delete_participator(account_id, task_id):
@@ -40,3 +40,12 @@ class UserTask(Base):
         self.account_id = account_id
         self.task_id = task_id
 
+    #@staticmethod
+    #def find_users_task_count(user_id):
+     #   stmt = text("SELECT COUNT FROM user_task"
+    #                 " WHERE user_task.account_id = :user_id").params(user_id=user_id)
+    #    res = db.engine.execute(stmt)
+
+
+
+    #    return res

@@ -25,10 +25,25 @@ class Task(Base):
     #Show all partys
     @staticmethod
     def find_lista():
-        stmt = text("SELECT Account.name AS account_name, Task.id, Task.done, Task.name, Task.date, Task.klo, Task.location FROM Account"
+        stmt = text("SELECT Account.username AS account_username, Task.id, Task.done, Task.name, Task.date, Task.klo, Task.location FROM Account"
                      " LEFT JOIN Task ON Task.account_id = Account.id"
                      " WHERE (Task.account_id = Account.id)"
                      " GROUP BY Task.id, account.name")
         res = db.engine.execute(stmt)
 
         return res
+
+    @staticmethod
+    def find_users_tasks(username):
+        stmt = text("SELECT Task.name FROM Account"
+                     " LEFT JOIN Task ON Account.id = Task.account_id"
+                     " WHERE (Account.username = :username)"
+                     " GROUP BY Account.id").params(username=username)
+        res = db.engine.execute(stmt)
+
+        response = []
+        for row in res:
+            response.append({"name":row[0]})
+
+        return response
+        

@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block body %}
+  <p>
+      <p style="font-size:30px">{{party.name}}</p>
+    
+    {{party.date}}
+    <p>Klo {{party.klo}}</p> 
+    <p>Sijainti: {{party.location}}</p>
+    <br /> <br />
+    <form method="POST" action="{{ url_for('tasks_participate', task_id=party.id) }}">
+      <input type="submit" class="btn btn-primary" value="Osallistu"/>
+    </form>
+    <th>Osallistujat</th>
+    {% if tasks_participators is defined %}
+
+    <ul>
+        
+      {% for user in tasks_participators %}
+      
+      <li><td><a href="{{ url_for('user_information', username=user.username) }}">{{ user.username }}</a></td>
+        
+      </li>
+
+      <form method="POST" action="{{ url_for('participation_delete', task_id=party.id) }}">
+        
+        <input type="submit" class="btn btn-primary" value="Poista!"/>
+      </form>
+      
+      {% endfor %}
+    </ul>
+    {% endif %}
+    
+  </p>
+
+{% endblock %}

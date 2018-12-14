@@ -37,7 +37,7 @@ class User(Base):
 
     @staticmethod
     def find_users_with_no_tasks(done='1'):
-        stmt = text("SELECT Account.id, Account.name FROM Account"
+        stmt = text("SELECT Account.id, Account.name ,Account.username FROM Account"
                      " LEFT JOIN Task ON Task.account_id = Account.id"
                      " WHERE (Task.done IS null OR Task.done = :done)"
                      " GROUP BY Account.id"
@@ -46,7 +46,19 @@ class User(Base):
 
         response = []
         for row in res:
-            response.append({"id":row[0], "name":row[1]})
+            response.append({"id":row[0], "name":row[1], "username":row[2]})
 
         return response
+
+    @staticmethod
+    def find_users_by_username(username):
+        stmt = text("SELECT Account.id, Account.name, Account.username FROM Account"
+                     " WHERE Account.username = :username").params(username=username)
+        res = db.engine.execute(stmt)
+
+
+
+        return res
+
+
 

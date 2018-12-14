@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+   
+
+
+  <table>
+      <th>Tässä näet käyttäjän tiedot</th>
+    <tr>
+      <th>Käyttäjänimi</th>
+      
+
+      <th>Nimi &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </th>
+      
+    </tr>
+    
+    <tr>
+      
+        {% for user in user_information %}
+      <td>{{ user.username }}</td>
+      <td>{{ user.name }}</td>
+
+      
+      
+    
+    </tr>
+
+    {% endfor %}
+
+  </table>
+
+  <br>
+  <br>
+<table>
+  <tr>
+    <th>Käyttäjän järjestämät bileet</th>
+  </tr>
+    
+  <tr>
+  {% for task in users_tasks %}
+  <td>{{ task.name }}</td>    
+  
+
+</tr>
+
+{% endfor %}
+</table>
+
+{% endblock %}

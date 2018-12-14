@@ -17,7 +17,7 @@ def auth_login():
     
     if not user:
         return render_template("auth/loginform.html", form = form,
-                                error = "No such username or password")
+                                error = "Käyttäjätunnus tai salasana väärin")
 
 
     login_user(user)
@@ -35,11 +35,11 @@ def auth_signup():
 
     if len(form.username.data) < 3:
         return render_template("auth/signupform.html", form = form,
-                                error = "Käyttäjätunnuksen tulee olla vähintää 3 merkkiä ja enintään 20 merkkiä")
+                                error = "Käyttäjätunnuksen tulee olla vähintään 3 merkkiä ja enintään 20 merkkiä")
 
     if len(form.username.data) > 20:
         return render_template("auth/signupform.html", form = form,
-                                error = "Käyttäjätunnuksen tulee olla vähintää 3 merkkiä ja enintään 20 merkkiä")
+                                error = "Käyttäjätunnuksen tulee olla vähintään 3 merkkiä ja enintään 20 merkkiä")
     if len(form.name.data) < 1:
         return render_template("auth/signupform.html", form = form,
                                 error = "Et laittanut nimeäsi")
@@ -54,11 +54,11 @@ def auth_signup():
 
     if len(form.password.data) < 3:
         return render_template("auth/signupform.html", form = form,
-                                error = "Salasanan tulee olla vähintää 3 merkkiä ja enintään 20 merkkiä")
+                                error = "Salasanan tulee olla vähintään 3 merkkiä ja enintään 20 merkkiä")
     
     if len(form.password.data) > 20:
         return render_template("auth/signupform.html", form = form,
-                                error = "Salasanan tulee olla vähintää 3 merkkiä ja enintään 20 merkkiä")
+                                error = "Salasanan tulee olla vähintään 3 merkkiä ja enintään 20 merkkiä")
 
     account = User(form.name.data)
     account.username = form.username.data
