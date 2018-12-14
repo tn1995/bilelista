@@ -39,7 +39,7 @@
   <tr>
     <th>Käyttäjän järjestämät bileet</th>
   </tr>
-    
+  {% if users_tasks is defined %}
   <tr>
   {% for task in users_tasks %}
   <td><a href="{{ url_for('tasks_information', task_id=task.id) }}">{{ task.name }}</a></td> 
