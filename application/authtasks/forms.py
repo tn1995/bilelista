@@ -6,8 +6,6 @@ from wtforms import BooleanField, StringField, validators, PasswordField, String
 
 class UserTaskForm():
 
-    
-
     class Meta:
         csrf = False
     

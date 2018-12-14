@@ -48,13 +48,3 @@ class UserTask(Base):
         res = db.engine.execute(stmt)
 
         return res
-
-    #@staticmethod
-    #def find_users_task_count(user_id):
-     #   stmt = text("SELECT COUNT FROM user_task"
-    #                 " WHERE user_task.account_id = :user_id").params(user_id=user_id)
-    #    res = db.engine.execute(stmt)
-
-
-
-    #    return res
