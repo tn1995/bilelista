@@ -25,14 +25,11 @@ def tasks_information(task_id):
 
     return render_template("authtasks/party.html", party = t, tasks_participators=UserTask.find_tasks_participators(task_id))
 
-
 #take part in party  
 @app.route("/information/osallistu/<task_id>", methods=["POST"])
 @login_required()
 def tasks_participate(task_id):
     t=UserTask(current_user.id, task_id)
-
-  
     db.session().add(t)
     db.session().commit()
   
@@ -43,7 +40,6 @@ def tasks_participate(task_id):
 @login_required()
 def participation_delete(task_id):
     
-    
     UserTask.delete_participator(current_user.id, task_id)
     return redirect(url_for("tasks_information", task_id=task_id))
 
@@ -51,34 +47,8 @@ def participation_delete(task_id):
 @app.route("/information/user/<username>")
 @login_required()
 def user_information(username):
-    
-
-    #users_tasks = UserTask.find_users_task_count(t.User.id)
   
     return render_template("authtasks/user.html", user_information=User.find_users_by_username(username), users_tasks=Task.find_users_tasks(username))
-#shows user info
-#@app.route("/information/user/<username>")
-#@login_required()
-#def user_task_count(user_id):
-   
-    
-  
-    #users_tasks = UserTask.find_users_task_count(t.User.id)
-  
-#    return render_template("authtasks/user.html", users_task_count=UserTask.find_users_task_count(user_id))
 
-#deletes user
-#@app.route("/information/delete/<user_id>/", methods=["POST"])
-#@login_required()
-#def user_delete(user_id):
-
-#    t = User.query.get(user_id)
-#    if t.user_id != current_user.id:
-##        return render_template("authtasks/user.html")
- #   db.session().delete(t)
-#    db.session().commit()
-    
-  
-#    return redirect("index.html")
 
 
