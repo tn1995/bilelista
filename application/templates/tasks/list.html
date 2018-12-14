@@ -22,8 +22,12 @@
       <td><a href="{{ url_for('tasks_information', task_id=task.id) }}">{{ task.name }}</a></td>
       <td>{{ task.date }}</td>
       <td>{{ task.klo }}</td>
-     
-      <td>{{ task.done }}</td>
+      <td>{% if task.done %}
+      Bileet alkaneet
+    {% else %}
+      Bileet eivät ole alkaneet
+    {% endif %}
+    </td>
       <td>{{task.location}}</td>
       
       <td><a href="{{ url_for('user_information', username=task.account_username) }}">{{ task.account_username }}</a></td>
