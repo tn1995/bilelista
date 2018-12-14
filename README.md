@@ -63,11 +63,15 @@ Listataan kaikki bileet:
 
 SELECT Account.name AS account_name, Task.id, Task.done, Task.name, Task.date, Task.klo, Task.location FROM Account LEFT JOIN Task ON Task.account_id = Account.id WHERE Task.account_id = Account.id GROUP BY Task.id, account.name
 
-Listataan kaikki valittuihin bileisiin osallistujat:
+Listataan valitun käyttäjän bileet:
+
+SELECT Task.id, Task.name, Task.date FROM Account JOIN Task ON Account.id = Task.account_id WHERE (Account.username = :username) GROUP BY Account.id, task.name, task.id
+
+Listataan kaikki valittuun bileisiin osallistujat:
 
 SELECT Account.name FROM Account LEFT JOIN User_task ON User_task.account_id = Account.id WHERE User_task.account_id = Account.id AND User_task.task_id = :task_id GROUP BY Account.id
 
-Poistetaan osallistuja bileistä:
+Poistetaan valittu osallistuja bileistä:
 
 DELETE FROM user_task WHERE User_task.account_id = :account_id AND User_task.task_id = :task_id
 
@@ -75,6 +79,13 @@ Näytetään osallistujat, jotka eivät ole luoneet bileitä:
 
 SELECT Account.id, Account.name FROM Account LEFT JOIN Task ON Task.account_id = Account.id WHERE Task.done IS null OR Task.done = :done GROUP BY Account.id HAVING COUNT(Task.id) = 0
 
+Poistetaan tiettyihin bileisiin osallistujat user_task liitostaulusta:
+
+DELETE FROM user_task WHERE User_task.task_id = task_id
+
+Haetaan käyttäjän tiedot käyttäjätunnuksen perusteella:
+
+SELECT Account.id, Account.name, Account.username FROM Account WHERE Account.username = username
 
 # Omat kokemukset
 Materiaalit ovat hyvät ja sovelluksen tekeminen on ollut hauskaa. On hyvä, että tekemisen tueksi on järjestetty paja, sillä siitä on ollut reilusti apua.
