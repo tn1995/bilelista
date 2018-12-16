@@ -6,7 +6,7 @@ Sovellukseen voi lisätä omia bileitä, joihin muut kirjautuneet käyttäjät v
 
 [linkki kayttotapauksiin](https://github.com/tn1995/bilelista/blob/master/documentation/kayttotapaukset.md)
 
-[linkki tietokantakaavioon](https://github.com/tn1995/bilelista/blob/master/documentation/TietokantakaavioUPDATE.pdf)
+[linkki tietokantakaavioon](https://github.com/tn1995/bilelista/blob/master/documentation/tietokantakaavio.pdf)
 
 [linkki asennusohjeisiin](https://github.com/tn1995/bilelista/blob/master/documentation/asennusohjeet.md)
 
