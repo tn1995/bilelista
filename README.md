@@ -6,26 +6,21 @@ Sovellukseen voi lisätä omia bileitä, joihin muut kirjautuneet käyttäjät v
 
 [linkki kayttotapauksiin](https://github.com/tn1995/bilelista/blob/master/documentation/kayttotapaukset.md)
 
-[linkki alkuperäiseen tietokantakaavioon](https://github.com/tn1995/bilelista/blob/master/documentation/tietokantakaavio.pdf)
-
-[linkki tämänhetkiseen tietokantakaavioon](https://github.com/tn1995/bilelista/blob/master/documentation/TietokantakaavioUPDATE.pdf)
+[linkki tietokantakaavioon](https://github.com/tn1995/bilelista/blob/master/documentation/TietokantakaavioUPDATE.pdf)
 
 [linkki asennusohjeisiin](https://github.com/tn1995/bilelista/blob/master/documentation/asennusohjeet.md)
 
 Testitunnusten käyttäjänimi on Tuomas 
 ja salasana on Tuomas
 
-Tämänhetkiset toiminnallisuudet:
+Toiminnallisuudet:
 - Kirjautuminen ja rekisteröityminen
 - Bileiden lisääminen ja poistaminen onnistuu. Poistaminen onnistuu vain henkilöltä, joka on luonut bileet listaan.
 - Bileisiin voi osallistua ja osallistumisen voi poistaa
-- Osallistu- nappia painamalla vain done arvo muuttuu trueksi
+- Bileet voi merkitä alkaneeksi vain niiden luoja
 - Sovellus listaa henkilöt, joilla ei ole bileitä
 - Bileitä klikkaamalla pääsee uudelle HTML- sivulle, jolta löytyy kaikki osallistujat
-
-Puuttuvat toiminnallisuudet ja ongelmat:
-- Osallistumisen poisto poistaa kaikkien samoihin bileisiin osallistuneiden osallistumisen
-- Bileiden sijainti pitää vielä saada näkyviin
+- Jokaisella henkilöllä on myös omat sivut
 
 # CREATE TABLE- komennot
 
